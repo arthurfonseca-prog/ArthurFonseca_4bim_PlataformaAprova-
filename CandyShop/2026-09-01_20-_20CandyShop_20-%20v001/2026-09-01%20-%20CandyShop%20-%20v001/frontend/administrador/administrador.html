@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Painel administrativo do Aprova+.">
+
+    <title>Aprova+ | Painel administrativo</title>
+
+    <link rel="stylesheet" href="administrador.css">
+
+    <script src="../logout.js" defer></script>
+    <script src="administrador.js" defer></script>
+</head>
+
+<body>
+
+    <div class="admin-container">
+
+        <!-- MENU LATERAL -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="logo">
+                <div class="logo-icon">A+</div>
+                <span>Aprova<span class="logo-highlight">+</span></span>
+            </div>
+
+            <div class="menu-section">
+                <p class="menu-title">MENU ADMINISTRATIVO</p>
+
+                <nav class="sidebar-nav">
+
+                    <a href="administrador.html" class="nav-link active">
+                        <span class="nav-icon">⌂</span>
+                        Painel inicial
+                    </a>
+
+                    <a href="#relatorios" class="nav-link">
+                        <span class="nav-icon">▥</span>
+                        Relatórios
+                    </a>
+
+                    <a href="../aulas/aulas.html" class="nav-link">
+                        <span class="nav-icon">▤</span>
+                        Gerenciar aulas
+                    </a>
+
+                </nav>
+            </div>
+
+            <div class="sidebar-bottom">
+
+                <a href="../perfil/perfil.html" class="nav-link">
+                    <span class="nav-icon">♙</span>
+                    Meu perfil
+                </a>
+
+                <button class="nav-link logout-link" id="logoutButton" type="button">
+                    <span class="nav-icon">↪</span>
+                    Sair
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <button class="menu-toggle" id="menuToggle" type="button"
+                    aria-label="Abrir menu">
+                    ☰
+                </button>
+
+                <div class="page-heading">
+                    <span class="welcome-label">ÁREA ADMINISTRATIVA</span>
+                    <h1>Painel inicial</h1>
+                </div>
+
+                <div class="admin-profile">
+                    <div class="admin-avatar">A</div>
+
+                    <div class="admin-info">
+                        <strong>Administrador</strong>
+                        <span>Administrador Aprova+</span>
+                    </div>
+                </div>
+
+            </header>
+
+
+            <!-- BOAS-VINDAS -->
+            <section class="welcome-section">
+
+                <div>
+                    <h2>Bem-vindo ao painel administrativo!</h2>
+
+                    <p>
+                        Acompanhe os dados da plataforma e gerencie
+                        os conteúdos do Aprova+.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- INDICADORES -->
+            <section class="statistics-section">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Visão geral</h2>
+                        <p>Resumo das informações da plataforma.</p>
+                    </div>
+                </div>
+
+
+                <div class="statistics-grid">
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon blue-icon">♙</div>
+
+                        <div class="stat-info">
+                            <span>Alunos cadastrados</span>
+                            <strong id="totalAlunos">--</strong>
+                        </div>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon purple-icon">▤</div>
+
+                        <div class="stat-info">
+                            <span>Disciplinas cadastradas</span>
+                            <strong id="totalDisciplinas">--</strong>
+                        </div>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon green-icon">▶</div>
+
+                        <div class="stat-info">
+                            <span>Aulas cadastradas</span>
+                            <strong id="totalAulas">--</strong>
+                        </div>
+
+                    </article>
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon orange-icon">✓</div>
+
+                        <div class="stat-info">
+                            <span>Assinaturas ativas</span>
+                            <strong id="totalAssinaturas">--</strong>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- RELATÓRIOS -->
+            <section class="reports-section" id="relatorios">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Relatórios</h2>
+                        <p>Indicadores gerais do Aprova+.</p>
+                    </div>
+                </div>
+
+                <div class="report-card">
+
+                    <div class="report-icon">▥</div>
+
+                    <div class="report-content">
+                        <h3>Resumo da plataforma</h3>
+
+                        <p>
+                            Consulte a quantidade de alunos,
+                            disciplinas, aulas e assinaturas ativas.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- GERENCIAMENTO -->
+            <section class="management-section">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Gerenciamento</h2>
+                        <p>Administre os conteúdos disponibilizados aos alunos.</p>
+                    </div>
+                </div>
+
+
+                <div class="management-card">
+
+                    <div class="management-icon">▶</div>
+
+                    <div class="management-content">
+                        <h3>Gerenciar aulas</h3>
+
+                        <p>
+                            Cadastre novas aulas, adicione vídeos,
+                            imagens, edite informações ou exclua conteúdos.
+                        </p>
+
+                        <a href="../aulas/aulas.html" class="management-button">
+                            Acessar gerenciamento
+                            <span>→</span>
+                        </a>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <footer class="admin-footer">
+                <p>© 2026 Aprova+ — Todos os direitos reservados.</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+</body>
+</html>

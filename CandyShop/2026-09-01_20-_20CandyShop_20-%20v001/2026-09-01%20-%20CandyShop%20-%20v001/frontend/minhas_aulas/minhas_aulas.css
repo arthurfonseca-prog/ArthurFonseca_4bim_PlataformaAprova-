@@ -1,0 +1,162 @@
+
+/* CABEÇALHO DA PÁGINA */
+
+.lessons-welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.lessons-welcome h1 {
+    font-size: 27px;
+    letter-spacing: -.8px;
+    margin: 0;
+    font-weight: 800;
+}
+
+
+/* SEÇÃO DE MATÉRIAS */
+
+.subjects-section {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    padding: 24px;
+}
+
+.subjects-section .section-heading {
+    margin-bottom: 22px;
+}
+
+.subjects-section h2 {
+    font-size: 17px;
+    margin: 0;
+    letter-spacing: -.3px;
+}
+
+
+/* ORGANIZAÇÃO DOS CARTÕES */
+
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+
+/* CARTÃO DE CADA MATÉRIA */
+
+.subject-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    min-height: 105px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 11px;
+    transition: .2s;
+}
+
+.subject-card:hover {
+    border-color: #cbd8ff;
+    background: #fbfcff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px #17213a0b;
+}
+
+
+/* ÍCONES */
+
+.subject-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.subject-icon.blue {
+    background: #eaf0ff;
+    color: #2457e8;
+}
+
+.subject-icon.purple {
+    background: #f1edff;
+    color: #8566dc;
+}
+
+.subject-icon.green {
+    background: #e9f8f0;
+    color: #36a875;
+}
+
+.subject-icon.orange {
+    background: #fff4e8;
+    color: #d58b35;
+}
+
+
+/* INFORMAÇÕES DAS MATÉRIAS */
+
+.subject-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.subject-info h3 {
+    font-size: 13px;
+    margin: 0 0 5px;
+    font-weight: 800;
+    color: var(--ink);
+}
+
+.subject-info p {
+    font-size: 10px;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.subject-arrow {
+    font-size: 19px;
+    color: #a0aabd;
+    padding-left: 5px;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 850px) {
+
+    .subjects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 560px) {
+
+    .lessons-welcome h1 {
+        font-size: 23px;
+    }
+
+    .subjects-section {
+        padding: 17px;
+    }
+
+    .subjects-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .subject-card {
+        padding: 14px;
+        min-height: 90px;
+    }
+
+}

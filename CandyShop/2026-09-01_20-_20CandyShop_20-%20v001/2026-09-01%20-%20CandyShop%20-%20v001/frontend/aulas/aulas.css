@@ -1,0 +1,555 @@
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6fb;
+    color: #202638;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* ========================================
+   MENU LATERAL
+======================================== */
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #172554;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 18px;
+    z-index: 1000;
+}
+
+.logo {
+    padding: 0 12px 35px;
+}
+
+.logo h2 {
+    font-size: 28px;
+    letter-spacing: -1px;
+}
+
+.logo h2 span {
+    color: #60a5fa;
+}
+
+.logo p {
+    font-size: 12px;
+    color: #cbd5e1;
+    margin-top: 6px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 14px;
+    text-decoration: none;
+    color: #dbeafe;
+    border-radius: 9px;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.menu-link span {
+    width: 20px;
+    text-align: center;
+    font-size: 19px;
+}
+
+.menu-link:hover,
+.menu-link.active {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+.logout-button {
+    margin-top: auto;
+    border: none;
+    background: transparent;
+    color: #fecaca;
+    padding: 14px;
+    text-align: left;
+    border-radius: 9px;
+    font-size: 14px;
+}
+
+.logout-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.logout-button span {
+    margin-right: 10px;
+}
+
+
+/* ========================================
+   CONTEÚDO PRINCIPAL
+======================================== */
+
+.main-content {
+    margin-left: 250px;
+    padding: 35px;
+    min-height: 100vh;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.topbar h1 {
+    font-size: 27px;
+    color: #172554;
+    margin-bottom: 7px;
+}
+
+.topbar p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: #172554;
+    color: white;
+    padding: 10px 13px;
+    border-radius: 7px;
+    font-size: 20px;
+}
+
+
+/* ========================================
+   SEÇÕES
+======================================== */
+
+.content-section {
+    background-color: #ffffff;
+    padding: 28px;
+    border-radius: 13px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 15px rgba(15, 23, 42, 0.04);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 27px;
+}
+
+.section-heading h2 {
+    color: #172554;
+    font-size: 19px;
+    margin-bottom: 7px;
+}
+
+.section-heading p {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   FORMULÁRIO
+======================================== */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    min-width: 0;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    color: #334155;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    border: 1px solid #dbe2ed;
+    border-radius: 8px;
+    padding: 13px 14px;
+    color: #334155;
+    background-color: #ffffff;
+    outline: none;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.form-group input:disabled,
+.form-group select:disabled {
+    background-color: #f1f5f9;
+    cursor: not-allowed;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.form-group small {
+    color: #94a3b8;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   UPLOAD DE IMAGEM
+======================================== */
+
+.image-upload input {
+    display: none;
+}
+
+.upload-label {
+    border: 2px dashed #cbd5e1;
+    border-radius: 10px;
+    min-height: 125px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    color: #475569;
+    transition: 0.2s;
+}
+
+.upload-label:hover {
+    border-color: #2563eb;
+    background-color: #f8faff;
+}
+
+.upload-icon {
+    font-size: 28px;
+    color: #2563eb;
+}
+
+.upload-label strong {
+    font-size: 13px;
+}
+
+.upload-label small {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.image-preview {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.image-preview[hidden] {
+    display: none;
+}
+
+.image-preview img {
+    width: 170px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.remove-image {
+    border: none;
+    background: none;
+    color: #dc2626;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.button-primary,
+.button-secondary {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.button-primary {
+    background-color: #2563eb;
+    color: white;
+}
+
+.button-primary:hover {
+    background-color: #1d4ed8;
+}
+
+.button-secondary {
+    background-color: #e8edf5;
+    color: #334155;
+}
+
+.button-secondary:hover {
+    background-color: #dbe3ef;
+}
+
+.button-primary:disabled,
+.button-secondary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.form-message {
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.form-message.success {
+    color: #15803d;
+}
+
+.form-message.error {
+    color: #dc2626;
+}
+
+
+/* ========================================
+   LISTAGEM DE AULAS
+======================================== */
+
+.lessons-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.lesson-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.lesson-card:hover {
+    border-color: #bfdbfe;
+    background-color: #f8faff;
+}
+
+.lesson-image {
+    width: 125px;
+    height: 82px;
+    flex-shrink: 0;
+    border-radius: 7px;
+    background-color: #e2e8f0;
+    object-fit: cover;
+}
+
+.lesson-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.lesson-info h3 {
+    color: #172554;
+    font-size: 15px;
+    margin-bottom: 7px;
+    overflow-wrap: anywhere;
+}
+
+.lesson-info p {
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.lesson-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.edit-button,
+.delete-button {
+    border: none;
+    padding: 9px 12px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.edit-button {
+    color: #1d4ed8;
+    background-color: #dbeafe;
+}
+
+.delete-button {
+    color: #b91c1c;
+    background-color: #fee2e2;
+}
+
+.edit-button:hover {
+    background-color: #bfdbfe;
+}
+
+.delete-button:hover {
+    background-color: #fecaca;
+}
+
+.empty-state {
+    text-align: center;
+    color: #94a3b8;
+    padding: 35px 15px;
+    font-size: 13px;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 25px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .main-content {
+        padding: 17px;
+    }
+
+    .topbar h1 {
+        font-size: 22px;
+    }
+
+    .content-section {
+        padding: 19px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .lesson-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .lesson-image {
+        width: 100%;
+        height: 160px;
+    }
+
+    .lesson-actions {
+        width: 100%;
+    }
+
+    .lesson-actions button {
+        flex: 1;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+
+}

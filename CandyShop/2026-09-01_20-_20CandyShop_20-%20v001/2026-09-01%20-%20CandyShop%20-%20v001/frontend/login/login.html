@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre na sua conta Aprova+ e continue sua preparação.">
+    <title>Entrar | Aprova+</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="../interface/interface.html" aria-label="Aprova+ — página inicial">
+            <span class="brand-symbol">A</span>
+            <span>APROVA<span>+</span></span>
+        </a>
+
+        <a class="back-link" href="../interface/interface.html">
+            <span aria-hidden="true">←</span> Voltar ao início
+        </a>
+    </header>
+
+    <main class="login-layout">
+        <section class="welcome-panel" aria-labelledby="welcome-title">
+            <span class="eyebrow">SUA JORNADA CONTINUA AQUI</span>
+            <h1 id="welcome-title">Cada passo<br>te aproxima da <span>conquista.</span></h1>
+            <p>Entre na sua conta para acessar suas aulas, acompanhar seu progresso e continuar estudando no seu ritmo.</p>
+
+            <div class="study-card">
+                <span class="study-card-icon" aria-hidden="true">✦</span>
+                <div>
+                    <strong>Seu esforço tem direção.</strong>
+                    <span>Retome de onde você parou.</span>
+                </div>
+            </div>
+
+            <div class="decor decor-one"></div>
+            <div class="decor decor-two"></div>
+            <span class="panel-mark" aria-hidden="true">A+</span>
+        </section>
+
+        <section class="form-panel" aria-labelledby="login-title">
+            <div class="form-heading">
+                <span class="eyebrow">BEM-VINDO DE VOLTA</span>
+                <h2 id="login-title">Acesse sua conta</h2>
+                <p>Informe seus dados para entrar na plataforma.</p>
+            </div>
+
+            <form class="login-form" id="loginForm">
+                <div class="form-field">
+                    <label for="email">E-mail</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="voce@exemplo.com"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-field">
+                    <div class="label-row">
+                        <label for="senha">Senha</label>
+                        <a href="#" class="subtle-link">Esqueceu a senha?</a>
+                    </div>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        placeholder="Digite sua senha"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+
+                <label class="remember-option">
+                    <input type="checkbox" name="lembrar">
+                    <span>Manter conectado</span>
+                </label>
+
+                <!-- Local onde aparecerão as mensagens do login -->
+                <p id="loginMessage" role="alert" aria-live="polite"></p>
+
+                <button class="button button-primary" type="submit">
+                    Entrar na minha conta <span aria-hidden="true">→</span>
+                </button>
+            </form>
+
+            <div class="signup-prompt">
+                <span>Ainda não tem uma conta?</span>
+                <a href="cadastro.html">Criar minha conta</a>
+            </div>
+
+            <p class="secure-note">
+                <span aria-hidden="true">⌑</span> Seus dados serão tratados com segurança.
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <span>© 2026 Aprova+. Projeto acadêmico.</span>
+        <a href="../interface/interface.html">Voltar à página inicial</a>
+    </footer>
+
+    <!-- Conecta o formulário ao JavaScript de autenticação -->
+    <script src="login.js" defer></script>
+</body>
+
+</html>
+```

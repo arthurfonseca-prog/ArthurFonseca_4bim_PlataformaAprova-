@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Escolha uma matéria e continue seus estudos no Aprova+.">
+
+    <title>Aprova+ | Minhas aulas</title>
+
+    <!-- Estilo compartilhado com as outras páginas -->
+    <link rel="stylesheet" href="../area_inicial/area_inicial.css">
+
+    <!-- Estilo específico desta página -->
+    <link rel="stylesheet" href="minhas_aulas.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+   
+    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="../logout.js" defer></script>
+<script src="minhas_aulas.js" defer></script>
+</head>
+
+<body>
+
+<div class="app-shell">
+
+    <!-- MENU PRINCIPAL -->
+    <aside class="sidebar" id="sidebar">
+
+        <a class="brand" href="../area_inicial/area_inicial.html">
+            <span class="brand-mark">A+</span>
+            <span>Aprova<span class="brand-plus">+</span></span>
+        </a>
+
+        <div class="side-label">MENU PRINCIPAL</div>
+
+        <nav class="side-nav" aria-label="Navegação principal">
+
+            <a class="nav-link" href="../area_inicial/area_inicial.html">
+                <span class="nav-icon">⌂</span>
+                Início
+            </a>
+
+            <a class="nav-link active" href="minhas_aulas.html" aria-current="page">
+                <span class="nav-icon">▤</span>
+                Minhas aulas
+            </a>
+
+            <a class="nav-link" href="../area_inicial/area_inicial.html#materiais">
+                <span class="nav-icon">▧</span>
+                Materiais
+            </a>
+
+            <a class="nav-link" href="../area_inicial/area_inicial.html#simulados">
+                <span class="nav-icon">✎</span>
+                Simulados
+            </a>
+
+            <a class="nav-link" href="../area_inicial/area_inicial.html#desempenho">
+                <span class="nav-icon">▥</span>
+                Meu desempenho
+            </a>
+
+        </nav>
+
+        <div class="side-label support-label">SUA CONTA</div>
+
+        <nav class="side-nav">
+
+            <a class="nav-link" href="../perfil/perfil.html">
+                <span class="nav-icon">◎</span>
+                Meu perfil
+            </a>
+
+            <button class="nav-link logout-link" id="logoutButton" type="button">
+    <span class="nav-icon">↪</span>
+    Sair
+</button>
+
+        </nav>
+
+        <div class="sidebar-help">
+
+            <div class="help-symbol">?</div>
+
+            <strong>Precisa de ajuda?</strong>
+
+            <p>
+                Estamos aqui para ajudar você a chegar mais longe.
+            </p>
+
+            <a href="../area_inicial/area_inicial.html#ajuda">
+                Acessar suporte <span>→</span>
+            </a>
+
+        </div>
+
+        <div class="sidebar-foot">
+            © 2026 Aprova+. Todos os direitos reservados.
+        </div>
+
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+
+        <!-- BARRA SUPERIOR -->
+        <header class="topbar">
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <div class="breadcrumb">
+                Área do aluno
+                <span>/</span>
+                <strong>Minhas aulas</strong>
+            </div>
+
+            <div class="top-actions">
+
+                <button class="icon-button notification" aria-label="Notificações">
+                    ♧<i></i>
+                </button>
+
+                <a class="profile-mini" href="../perfil/perfil.html">
+
+                    <span class="avatar">A</span>
+
+                    <span class="profile-name">
+                        <strong>Olá, estudante!</strong>
+                        <small>Minha conta</small>
+                    </span>
+
+                    <span class="chevron">⌄</span>
+
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- PÁGINA DE MATÉRIAS -->
+        <div class="page-wrap">
+
+            <section class="lessons-welcome">
+
+                <div>
+                    <p class="eyebrow">SUA JORNADA DE APRENDIZADO</p>
+
+                    <h1>Minhas aulas</h1>
+
+                    <p class="welcome-subtitle">
+                        Escolha uma matéria e continue avançando nos seus estudos.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- SELEÇÃO DE MATÉRIAS -->
+            <section class="subjects-section">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">CONTEÚDO PROGRAMÁTICO</p>
+                        <h2>Escolha uma matéria</h2>
+                    </div>
+                </div>
+
+                <div class="subjects-grid" id="subjectsContainer">
+    <!-- As disciplinas, tópicos e aulas serão inseridos pelo JavaScript -->
+</div>
+
+            </section>
+
+
+            <footer class="page-footer">
+
+                <span>
+                    © 2026 Aprova+. Feito para acompanhar sua jornada.
+                </span>
+
+                <span>
+                    <a href="../area_inicial/area_inicial.html#ajuda">Ajuda</a>
+                    ·
+                    <a href="../area_inicial/area_inicial.html#termos">Termos de uso</a>
+                </span>
+
+            </footer>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script>
+    const toggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+
+    toggle.addEventListener('click', () => {
+        const aberto = sidebar.classList.toggle('sidebar-open');
+
+        toggle.setAttribute('aria-expanded', aberto);
+    });
+
+    document.querySelectorAll('.side-nav a').forEach(link => {
+
+        link.addEventListener('click', () => {
+            sidebar.classList.remove('sidebar-open');
+            toggle.setAttribute('aria-expanded', 'false');
+        });
+
+    });
+</script>
+
+</body>
+</html>

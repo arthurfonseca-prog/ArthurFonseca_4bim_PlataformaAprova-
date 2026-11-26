@@ -1,0 +1,658 @@
+
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6fb;
+    color: #202b3c;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* ========================================
+   ESTRUTURA PRINCIPAL
+======================================== */
+
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* ========================================
+   MENU LATERAL
+======================================== */
+
+.sidebar {
+    width: 255px;
+    min-height: 100vh;
+    background-color: #111c32;
+    color: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 28px 18px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    z-index: 100;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    font-size: 23px;
+    font-weight: 700;
+
+    padding: 0 10px;
+    margin-bottom: 55px;
+}
+
+.logo-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #2864e8;
+    border-radius: 10px;
+
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.logo-highlight {
+    color: #4b83ff;
+}
+
+
+/* TÍTULO DO MENU */
+
+.menu-title {
+    color: #8391a9;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+
+    padding: 0 12px;
+    margin-bottom: 15px;
+}
+
+
+/* LINKS */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.nav-link {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 13px 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #c5cee0;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.nav-link:hover {
+    background-color: #263751;
+    color: #ffffff;
+}
+
+.nav-link.active {
+    background-color: #2864e8;
+    color: #ffffff;
+}
+
+.nav-icon {
+    width: 21px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+}
+
+
+/* PARTE INFERIOR DO MENU */
+
+.sidebar-bottom {
+    margin-top: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    padding-top: 25px;
+    border-top: 1px solid #344158;
+}
+
+.logout-link {
+    color: #ff8585;
+    text-align: left;
+}
+
+.logout-link:hover {
+    background-color: #3b2633;
+    color: #ffaaaa;
+}
+
+
+/* ========================================
+   CONTEÚDO PRINCIPAL
+======================================== */
+
+.main-content {
+    flex: 1;
+
+    margin-left: 255px;
+
+    padding: 35px 45px;
+
+    min-width: 0;
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 38px;
+}
+
+.page-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.welcome-label {
+    color: #2864e8;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.page-heading h1 {
+    font-size: 27px;
+    color: #17243a;
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-avatar {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #2864e8;
+    color: #ffffff;
+
+    border-radius: 50%;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.admin-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.admin-info strong {
+    font-size: 13px;
+    color: #26344a;
+}
+
+.admin-info span {
+    font-size: 11px;
+    color: #8792a5;
+}
+
+
+/* BOTÃO MOBILE */
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+    background: none;
+
+    font-size: 24px;
+    color: #17243a;
+
+    cursor: pointer;
+}
+
+
+/* ========================================
+   BOAS-VINDAS
+======================================== */
+
+.welcome-section {
+    background: linear-gradient(110deg, #1d4fc1, #3478f6);
+
+    color: #ffffff;
+
+    border-radius: 13px;
+
+    padding: 30px 32px;
+
+    margin-bottom: 38px;
+}
+
+.welcome-section h2 {
+    font-size: 21px;
+    margin-bottom: 9px;
+}
+
+.welcome-section p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #e4edff;
+}
+
+
+/* ========================================
+   TÍTULOS DAS SEÇÕES
+======================================== */
+
+.statistics-section,
+.reports-section,
+.management-section {
+    margin-bottom: 38px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    font-size: 18px;
+    color: #202d43;
+
+    margin-bottom: 6px;
+}
+
+.section-heading p {
+    font-size: 12px;
+    color: #8994a7;
+}
+
+
+/* ========================================
+   CARDS DE ESTATÍSTICAS
+======================================== */
+
+.statistics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.stat-card {
+    background-color: #ffffff;
+
+    border: 1px solid #e9edf4;
+    border-radius: 11px;
+
+    padding: 21px 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    min-width: 0;
+
+    transition: 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(24, 43, 77, 0.07);
+}
+
+.stat-icon {
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    font-size: 21px;
+}
+
+.blue-icon {
+    background-color: #e8f0ff;
+    color: #2864e8;
+}
+
+.purple-icon {
+    background-color: #f0eaff;
+    color: #8656d8;
+}
+
+.green-icon {
+    background-color: #e5f8ef;
+    color: #20a66b;
+}
+
+.orange-icon {
+    background-color: #fff1e2;
+    color: #e58a28;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    min-width: 0;
+}
+
+.stat-info span {
+    font-size: 11px;
+    color: #8994a7;
+}
+
+.stat-info strong {
+    font-size: 25px;
+    color: #202d43;
+}
+
+
+/* ========================================
+   RELATÓRIOS
+======================================== */
+
+.report-card {
+    background-color: #ffffff;
+
+    border: 1px solid #e9edf4;
+    border-radius: 11px;
+
+    padding: 23px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.report-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background-color: #e8f0ff;
+    color: #2864e8;
+
+    font-size: 24px;
+}
+
+.report-content h3 {
+    color: #202d43;
+    font-size: 14px;
+
+    margin-bottom: 7px;
+}
+
+.report-content p {
+    color: #8994a7;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   GERENCIAMENTO
+======================================== */
+
+.management-card {
+    background-color: #ffffff;
+
+    border: 1px solid #e9edf4;
+    border-radius: 11px;
+
+    padding: 25px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.management-icon {
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background-color: #e8f0ff;
+    color: #2864e8;
+
+    font-size: 23px;
+}
+
+.management-content h3 {
+    color: #202d43;
+    font-size: 15px;
+
+    margin-bottom: 9px;
+}
+
+.management-content p {
+    color: #8994a7;
+    font-size: 12px;
+    line-height: 1.7;
+
+    margin-bottom: 17px;
+}
+
+.management-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 11px 16px;
+
+    background-color: #2864e8;
+    color: #ffffff;
+
+    border-radius: 7px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.management-button:hover {
+    background-color: #174bbd;
+}
+
+.management-button span {
+    font-size: 17px;
+}
+
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+.admin-footer {
+    border-top: 1px solid #e5eaf2;
+
+    padding-top: 22px;
+    margin-top: 45px;
+
+    text-align: center;
+}
+
+.admin-footer p {
+    color: #a0a9b8;
+    font-size: 11px;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 1100px) {
+
+    .statistics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .main-content {
+        padding: 30px;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 25px 20px;
+    }
+
+    .topbar {
+        gap: 15px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .page-heading {
+        flex: 1;
+    }
+
+    .page-heading h1 {
+        font-size: 21px;
+    }
+
+    .admin-info {
+        display: none;
+    }
+
+    .welcome-section {
+        padding: 24px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .statistics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        padding: 18px;
+    }
+
+    .welcome-section h2 {
+        font-size: 18px;
+    }
+
+    .management-card {
+        flex-direction: column;
+    }
+
+    .main-content {
+        padding: 22px 16px;
+    }
+
+}

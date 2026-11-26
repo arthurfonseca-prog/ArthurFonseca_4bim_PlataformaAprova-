@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aprova+ — cursos preparatórios para seus próximos objetivos.">
+    <title>Aprova+ | Prepare-se para conquistar</title>
+    <link rel="stylesheet" href="interface.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="#inicio" aria-label="Aprova+ — página inicial">
+            <span class="brand-symbol">A</span>
+            <span class="brand-name">APROVA<span>+</span></span>
+        </a>
+
+        <nav class="main-nav" aria-label="Navegação principal">
+            <a href="#inicio" class="nav-link active">Início</a>
+            <a href="#cursos" class="nav-link">Cursos</a>
+            <a href="#gratuitos" class="nav-link">Cursos gratuitos</a>
+            <a href="#ajuda" class="nav-link">Ajuda</a>
+            <a href="#loja" class="nav-link">Loja</a>
+        </nav>
+
+        <a class="student-login" href="../login/login.html">
+            <span class="login-icon" aria-hidden="true">↗</span>
+            Já sou aluno
+        </a>
+
+        <button class="mobile-menu" type="button" aria-label="Abrir menu">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <main id="inicio">
+        <!-- Faixa de divulgação: futuramente poderá receber promoções do banco de dados. -->
+        <section class="announcement" aria-label="Avisos e promoções">
+            <span class="announcement-label">OFERTA ESPECIAL</span>
+            <p>Prepare-se para o próximo desafio com condições especiais.</p>
+            <a href="#planos">Conheça os planos <span aria-hidden="true">→</span></a>
+        </section>
+
+        <!-- Área comercial principal -->
+        <section class="intro section-container" aria-labelledby="intro-title">
+            <div class="intro-copy">
+                <span class="eyebrow">SEU PRÓXIMO PASSO COMEÇA AQUI</span>
+                <h1 id="intro-title">Aprenda hoje.<br><span>Conquiste amanhã.</span></h1>
+                <p>Uma preparação organizada, com aulas e materiais para acompanhar seu ritmo e seus objetivos.</p>
+                <div class="intro-actions">
+                    <a class="button button-primary" href="#cursos">Conhecer os cursos</a>
+                    <a class="text-link" href="#gratuitos">Explorar conteúdos gratuitos</a>
+                </div>
+            </div>
+
+            <div class="intro-art" aria-label="Espaço reservado para imagem de divulgação">
+                <div class="art-decoration decoration-one"></div>
+                <div class="art-decoration decoration-two"></div>
+                <div class="art-card">
+                    <span class="art-kicker">APROVA+</span>
+                    <strong>Seu esforço<br>tem direção.</strong>
+                    <span class="art-caption">ESTUDE COM PROPÓSITO</span>
+                </div>
+                <span class="art-orbit orbit-one"></span>
+                <span class="art-orbit orbit-two"></span>
+            </div>
+        </section>
+
+        <!-- Planos promocionais -->
+        <section class="plans-section section-container" id="planos" aria-labelledby="plans-title">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">ESCOLHA COMO ESTUDAR</span>
+                    <h2 id="plans-title">Um plano para cada momento.</h2>
+                    <p>Tenha acesso ao curso pelo período que faz sentido para sua preparação.</p>
+                </div>
+                <a class="text-link desktop-link" href="#cursos">Ver detalhes dos cursos <span aria-hidden="true">→</span></a>
+            </div>
+
+            <div class="plan-grid">
+                <article class="plan-card">
+                    <span class="plan-period">03 MESES</span>
+                    <h3>Plano trimestral</h3>
+                    <p class="plan-description">Para começar sua preparação.</p>
+                    <div class="price"><span>3x</span> R$ 80<small>,00</small></div>
+                    <p class="total-price">Total de R$ 240,00</p>
+                    <ul class="plan-features">
+                        <li>Acesso por 3 meses</li>
+                        <li>Aulas e materiais do curso</li>
+                    </ul>
+                    <a class="button button-outline" href="../cadastro/cadastro.html">Conhecer plano</a>
+                </article>
+
+                <article class="plan-card plan-featured">
+                    <span class="featured-label">MAIS ESCOLHIDO</span>
+                    <span class="plan-period">06 MESES</span>
+                    <h3>Plano semestral</h3>
+                    <p class="plan-description">Mais tempo para avançar nos estudos.</p>
+                    <div class="price"><span>6x</span> R$ 100<small>,00</small></div>
+                    <p class="total-price">Total de R$ 600,00</p>
+                    <ul class="plan-features">
+                        <li>Acesso por 6 meses</li>
+                        <li>Aulas e materiais do curso</li>
+                    </ul>
+                   <a class="button button-outline" href="../cadastro/cadastro.html">Conhecer plano</a>
+                </article>
+
+                <article class="plan-card">
+                    <span class="plan-period">12 MESES</span>
+                    <h3>Plano anual</h3>
+                    <p class="plan-description">Uma preparação de longo prazo.</p>
+                    <div class="price"><span>12x</span> R$ 120<small>,00</small></div>
+                    <p class="total-price">Total de R$ 1.440,00</p>
+                    <ul class="plan-features">
+                        <li>Acesso por 12 meses</li>
+                        <li>Aulas e materiais do curso</li>
+                    </ul>
+                  <a class="button button-outline" href="../cadastro/cadastro.html">Conhecer plano</a>
+                </article>
+            </div>
+            <p class="price-note">Valores ilustrativos para a construção do protótipo. As condições comerciais serão definidas posteriormente.</p>
+        </section>
+
+        <!-- Banner promocional: espaço reservado para uma imagem/banner futuro. -->
+        <section class="banner-placeholder section-container" aria-label="Espaço reservado para banner">
+            <div class="banner-placeholder-content">
+                <span class="eyebrow">ESPAÇO PARA CAMPANHA</span>
+                <h2>Seu próximo grande resultado começa com preparação.</h2>
+                <p>Esta área poderá receber um banner de campanha, lançamento ou promoção especial.</p>
+            </div>
+            <span class="banner-tag">BANNER / CAMPANHA</span>
+        </section>
+
+        <!-- Seções iniciais para os links de navegação. O conteúdo será desenvolvido depois. -->
+        <section class="simple-section section-container" id="cursos">
+            <div>
+                <span class="eyebrow">APRENDA NO SEU RITMO</span>
+                <h2>Conheça nossos cursos</h2>
+                <p>Em breve, você poderá explorar os cursos disponíveis e comparar seus planos.</p>
+            </div>
+            <span class="section-number">01</span>
+        </section>
+
+        <section class="simple-section section-container" id="gratuitos">
+            <div>
+                <span class="eyebrow">COMECE SEM CUSTO</span>
+                <h2>Conteúdos gratuitos</h2>
+                <p>Uma seleção de materiais e aulas abertas para você conhecer nossa metodologia.</p>
+            </div>
+            <span class="section-number">02</span>
+        </section>
+
+        <section class="simple-section section-container" id="ajuda">
+            <div>
+                <span class="eyebrow">PODEMOS AJUDAR?</span>
+                <h2>Fale com nossa equipe</h2>
+                <p>Em uma próxima etapa, esta seção terá os canais de contato e as dúvidas frequentes.</p>
+            </div>
+            <span class="section-number">03</span>
+        </section>
+
+        <section class="simple-section section-container" id="loja">
+            <div>
+                <span class="eyebrow">LEVE A APROVA+ COM VOCÊ</span>
+                <h2>Loja</h2>
+                <p>Em breve: materiais de estudo, cadernos, camisetas e outros produtos.</p>
+            </div>
+            <span class="section-number">04</span>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <a class="brand footer-brand" href="#inicio">
+                <span class="brand-symbol">A</span>
+                <span class="brand-name">APROVA<span>+</span></span>
+            </a>
+            <p>Preparação com propósito.</p>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Aprova+. Projeto acadêmico.</span>
+            <span>Nome completo · Turma · 2026</span>
+        </div>
+    </footer>
+</body>
+</html>

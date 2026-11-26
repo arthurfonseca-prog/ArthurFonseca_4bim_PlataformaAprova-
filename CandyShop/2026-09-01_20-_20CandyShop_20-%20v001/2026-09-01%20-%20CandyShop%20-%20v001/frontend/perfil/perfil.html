@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Consulte seus dados cadastrais na plataforma Aprova+.">
+  <title>Aprova+ | Meu perfil</title>
+
+  <!-- Reutiliza a folha de estilos da área inicial para manter o mesmo menu e identidade visual. -->
+  <link rel="stylesheet" href="../area_inicial/area_inicial.css">
+  <link rel="stylesheet" href="perfil.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="../logout.js" defer></script>
+</head>
+
+<body>
+  <div class="app-shell">
+    
+<aside class="sidebar" id="sidebar">
+
+    <a class="brand" href="../area_inicial/area_inicial.html"
+       aria-label="Aprova+ - página inicial">
+        <span class="brand-mark">A+</span>
+        <span>Aprova<span class="brand-plus">+</span></span>
+    </a>
+
+    <div class="side-label">MENU PRINCIPAL</div>
+
+    <nav class="side-nav" aria-label="Navegação principal">
+
+        <a class="nav-link" href="../area_inicial/area_inicial.html">
+            <span class="nav-icon">⌂</span>Início
+        </a>
+
+        <a class="nav-link" href="../minhas_aulas/minhas_aulas.html">
+            <span class="nav-icon">▤</span>Minhas aulas
+        </a>
+
+        <a class="nav-link" href="../materiais/materiais.html">
+            <span class="nav-icon">▧</span>Materiais
+        </a>
+
+        <a class="nav-link" href="../simulados/simulados.html">
+            <span class="nav-icon">✎</span>Simulados
+        </a>
+
+        <a class="nav-link" href="../area_inicial/area_inicial.html#desempenho">
+            <span class="nav-icon">▥</span>Meu desempenho
+        </a>
+
+    </nav>
+
+    <div class="side-label support-label">SUA CONTA</div>
+
+    <nav class="side-nav" aria-label="Opções da conta">
+
+        <a class="nav-link active" href="perfil.html" aria-current="page">
+            <span class="nav-icon">◎</span>Meu perfil
+        </a>
+
+        <a class="nav-link" href="../index.html">
+            <span class="nav-icon">↪</span>Sair
+        </a>
+
+    </nav>
+
+    <div class="sidebar-help">
+        <div class="help-symbol">?</div>
+        <strong>Precisa de ajuda?</strong>
+        <p>Estamos aqui para ajudar você a chegar mais longe.</p>
+        <a href="../area_inicial/area_inicial.html#ajuda">
+            Acessar suporte <span>→</span>
+        </a>
+    </div>
+
+    <div class="sidebar-foot">
+        © 2026 Aprova+. Todos os direitos reservados.
+    </div>
+
+</aside>
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+        <div class="breadcrumb">
+          Área do aluno <span>/</span> <strong>Meu perfil</strong>
+        </div>
+
+        <div class="top-actions">
+          <button class="icon-button notification" type="button" aria-label="Notificações">♧<i></i></button>
+          <a class="profile-mini" href="perfil.html">
+            <span class="avatar" id="topAvatar">A</span>
+            <span class="profile-name">
+              <strong id="topName">Olá, estudante!</strong>
+              <small>Minha conta</small>
+            </span>
+            <span class="chevron">⌄</span>
+          </a>
+        </div>
+      </header>
+
+      <div class="page-wrap">
+        <section class="welcome-row">
+          <div>
+            <p class="eyebrow">SUA CONTA APROVA+</p>
+            <h1>Meu perfil</h1>
+            <p class="welcome-subtitle">Confira as informações cadastradas na sua conta.</p>
+          </div>
+        </section>
+
+        <section class="profile-intro" aria-label="Identificação do aluno">
+          <div class="profile-avatar" id="profileAvatar">A</div>
+          <div class="profile-intro-text">
+            <p class="eyebrow">BEM-VINDO(A) À SUA CONTA</p>
+            <h1 id="displayName">Nome do estudante</h1>
+            <p id="userType">Aluno Aprova+</p>
+          </div>
+        </section>
+
+        <div class="profile-layout">
+          <div class="profile-column">
+            <section class="section-card">
+              <div class="profile-section-title">
+                <span class="profile-section-icon">◎</span>
+                <div>
+                  <h2>Dados pessoais</h2>
+                  <p>Informações básicas do seu cadastro.</p>
+                </div>
+              </div>
+
+              <div class="data-grid">
+                <div class="data-item full">
+                  <span class="data-label">Nome completo</span>
+                  <span class="data-value" id="fullName">Aguardando dados...</span>
+                </div>
+
+                <div class="data-item">
+                  <span class="data-label">E-mail</span>
+                  <span class="data-value" id="email">Aguardando dados...</span>
+                </div>
+
+                
+            </section>
+
+            <section class="section-card">
+              <div class="profile-section-title">
+                <span class="profile-section-icon">▤</span>
+                <div>
+                  <h2>Informações da conta</h2>
+                  <p>Dados relacionados ao seu acesso à plataforma.</p>
+                </div>
+              </div>
+
+              <div class="data-grid">
+                <div class="data-item">
+                  <span class="data-label">Tipo de usuário</span>
+                  <span class="data-value" id="accountType">Aguardando dados...</span>
+                </div>
+
+                <div class="data-item">
+                  <span class="data-label">Data de cadastro</span>
+                  <span class="data-value" id="registrationDate">Aguardando dados...</span>
+                </div>
+
+                <div class="data-item full">
+                  <span class="data-label">Situação da conta</span>
+                  <span class="data-value">
+                    <span class="account-status">Conta cadastrada</span>
+                  </span>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <aside class="profile-column">
+            <section class="section-card">
+              <div class="profile-section-title">
+                <span class="profile-section-icon">▣</span>
+                <div>
+                  <h2>Seu perfil</h2>
+                  <p>Personalização da conta.</p>
+                </div>
+              </div>
+
+              <div class="data-item">
+                <span class="data-label">Nome de exibição</span>
+                <span class="data-value" id="displayNameInfo">Não informado</span>
+              </div>
+
+              <div class="data-item photo-data-item">
+                <span class="data-label">Foto de perfil</span>
+                <span class="data-value" id="photoInfo">Imagem padrão</span>
+              </div>
+            </section>
+
+            <section class="info-card">
+              <div class="info-card-icon">?</div>
+              <h3>Precisa atualizar seus dados?</h3>
+              <p>Se alguma informação estiver incorreta, entre em contato com o suporte da plataforma para solicitar a atualização do cadastro.</p>
+            </section>
+
+            <section class="section-card">
+              <div class="security-note">
+                <span>🔒</span>
+                <p>Por segurança, sua senha não é exibida nesta página. Mantenha seus dados de acesso protegidos.</p>
+              </div>
+            </section>
+          </aside>
+        </div>
+
+        <footer class="page-footer">
+          <span>© 2026 Aprova+. Feito para acompanhar sua jornada.</span>
+          <span>
+            <a href="../area_inicial/area_inicial.html#ajuda">Ajuda</a> ·
+            <a href="../area_inicial/area_inicial.html#termos">Termos de uso</a>
+          </span>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <script src="perfil.js" defer></script>
+</body>
+ 

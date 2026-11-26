@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Gerenciamento de aulas do Aprova+.">
+
+    <title>Aprova+ | Gerenciar aulas</title>
+
+    <link rel="stylesheet" href="aulas.css">
+    <script src="../logout.js" defer></script>
+    <script src="aulas.js" defer></script>
+</head>
+
+<body>
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+            <h2>Aprova<span>+</span></h2>
+            <p>Painel administrativo</p>
+        </div>
+
+        <nav class="menu">
+
+            <a href="../administrador/administrador.html" class="menu-link">
+                <span>⌂</span>
+                Início
+            </a>
+
+            <a href="../administrador/administrador.html#relatorios" class="menu-link">
+                <span>▤</span>
+                Relatórios
+            </a>
+
+            <a href="aulas.html" class="menu-link active">
+                <span>▶</span>
+                Gerenciar aulas
+            </a>
+
+            <a href="../perfil/perfil.html" class="menu-link">
+                <span>♙</span>
+                Meu perfil
+            </a>
+
+        </nav>
+
+        <button class="logout-button" id="logoutButton">
+            <span>↪</span>
+            Sair
+        </button>
+
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                ☰
+            </button>
+
+            <div>
+                <h1>Gerenciar aulas</h1>
+                <p>Cadastre, organize e atualize as aulas do Aprova+.</p>
+            </div>
+
+        </header>
+
+
+        <!-- FORMULÁRIO DE CADASTRO -->
+        <section class="content-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2 id="formTitle">Cadastrar nova aula</h2>
+                    <p>Preencha as informações para adicionar uma aula à plataforma.</p>
+                </div>
+            </div>
+
+
+            <form id="aulaForm" enctype="multipart/form-data">
+
+                <input type="hidden" id="idAula">
+
+                <div class="form-grid">
+
+                    <!-- TÍTULO -->
+                    <div class="form-group full-width">
+
+                        <label for="titulo">Título da aula</label>
+
+                        <input
+                            type="text"
+                            id="titulo"
+                            name="titulo"
+                            placeholder="Ex.: Introdução às funções"
+                            maxlength="150"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- DISCIPLINA -->
+                    <div class="form-group">
+
+                        <label for="disciplina">Disciplina</label>
+
+                        <select id="disciplina" name="disciplina" required>
+                            <option value="">Carregando disciplinas...</option>
+                        </select>
+
+                    </div>
+
+
+                    <!-- TÓPICO -->
+                    <div class="form-group">
+
+                        <label for="topico">Tópico</label>
+
+                        <select id="topico" name="id_topico" required disabled>
+                            <option value="">Selecione uma disciplina primeiro</option>
+                        </select>
+
+                    </div>
+
+
+                    <!-- DESCRIÇÃO -->
+                    <div class="form-group full-width">
+
+                        <label for="descricao">Descrição da aula</label>
+
+                        <textarea
+                            id="descricao"
+                            name="descricao"
+                            rows="4"
+                            placeholder="Descreva brevemente o conteúdo abordado nesta aula..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- LINK DO YOUTUBE -->
+                    <div class="form-group full-width">
+
+                        <label for="videoUrl">Link do vídeo no YouTube</label>
+
+                        <input
+                            type="url"
+                            id="videoUrl"
+                            name="video_url"
+                            placeholder="https://www.youtube.com/watch?v=..."
+                            required
+                        >
+
+                        <small>
+                            Cole o endereço do vídeo que será reproduzido na plataforma.
+                        </small>
+
+                    </div>
+
+
+                    <!-- ORDEM -->
+                    <div class="form-group">
+
+                        <label for="ordem">Ordem da aula</label>
+
+                        <input
+                            type="number"
+                            id="ordem"
+                            name="ordem"
+                            min="1"
+                            value="1"
+                            required
+                        >
+
+                        <small>
+                            Define a posição da aula dentro do tópico.
+                        </small>
+
+                    </div>
+
+
+                    <!-- IMAGEM -->
+                    <div class="form-group full-width">
+
+                        <label for="imagem">Imagem de capa da aula</label>
+
+                        <div class="image-upload">
+
+                            <input
+                                type="file"
+                                id="imagem"
+                                name="imagem"
+                                accept="image/png, image/jpeg, image/webp"
+                            >
+
+                            <label for="imagem" class="upload-label">
+                                <span class="upload-icon">＋</span>
+                                <strong>Selecionar imagem</strong>
+                                <small>PNG, JPG ou WEBP</small>
+                            </label>
+
+                        </div>
+
+                        <div class="image-preview" id="imagePreviewContainer" hidden>
+
+                            <img id="imagePreview" src="" alt="Prévia da capa da aula">
+
+                            <button type="button" id="removeImage" class="remove-image">
+                                Remover imagem selecionada
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BOTÕES -->
+                <div class="form-actions">
+
+                    <button type="button" id="cancelEdit" class="button-secondary" hidden>
+                        Cancelar edição
+                    </button>
+
+                    <button type="submit" id="submitButton" class="button-primary">
+                        Cadastrar aula
+                    </button>
+
+                </div>
+
+                <p id="formMessage" class="form-message" role="status"></p>
+
+            </form>
+
+        </section>
+
+
+        <!-- LISTAGEM DE AULAS -->
+        <section class="content-section lessons-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Aulas cadastradas</h2>
+                    <p>Consulte e gerencie as aulas disponíveis no Aprova+.</p>
+                </div>
+
+                <button type="button" id="refreshButton" class="button-secondary">
+                    ↻ Atualizar
+                </button>
+            </div>
+
+
+            <div class="lessons-list" id="lessonsList">
+
+                <div class="empty-state">
+                    <p>Carregando aulas...</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

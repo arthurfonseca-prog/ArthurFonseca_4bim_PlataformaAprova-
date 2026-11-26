@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --blue: #2457e8;
+    --blue-dark: #173eb7;
+    --blue-soft: #edf3ff;
+    --ink: #17213a;
+    --muted: #69748a;
+    --line: #e7eaf0;
+    --surface: #ffffff;
+    --background: #f7f8fb;
+    --radius: 18px;
+    --shadow: 0 14px 40px rgba(25, 48, 96, .07);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    color: var(--ink);
+    background: var(--surface);
+    font-family: 'DM Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+
+.site-header {
+    min-height: 82px;
+    padding: 0 clamp(22px, 5.5vw, 86px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.brand { display: inline-flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.brand-symbol {
+    width: 39px; height: 39px;
+    display: grid; place-items: center;
+    border-radius: 11px;
+    color: white; background: var(--blue);
+    font: 800 25px 'Manrope', sans-serif;
+}
+.brand-name { font: 800 18px 'Manrope', sans-serif; letter-spacing: -.8px; }
+.brand-name span { color: var(--blue); }
+.main-nav { display: flex; align-items: center; gap: clamp(15px, 2.1vw, 31px); }
+.nav-link { color: #566176; font-size: 13px; font-weight: 600; transition: color .2s; white-space: nowrap; }
+.nav-link:hover, .nav-link.active { color: var(--blue); }
+.student-login {
+    display: inline-flex; align-items: center; gap: 9px;
+    color: var(--blue); font-size: 13px; font-weight: 700;
+    white-space: nowrap;
+}
+.login-icon {
+    width: 30px; height: 30px; display: grid; place-items: center;
+    border: 1px solid #dbe5ff; border-radius: 50%; font-size: 18px;
+}
+.mobile-menu { display: none; border: 0; background: none; padding: 8px; }
+.mobile-menu span { display: block; width: 22px; height: 2px; margin: 4px; background: var(--ink); }
+
+.announcement {
+    min-height: 48px; padding: 9px 5vw;
+    display: flex; align-items: center; justify-content: center; gap: 17px;
+    background: #eaf2ff; color: #2449a7; font-size: 13px;
+}
+.announcement p { margin: 0; }
+.announcement-label {
+    color: var(--blue); font-size: 10px; font-weight: 800;
+    letter-spacing: 1px;
+}
+.announcement a { font-weight: 700; white-space: nowrap; }
+.announcement a span { margin-left: 4px; }
+
+.section-container { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
+.intro {
+    min-height: 390px; padding-block: 58px 54px;
+    display: grid; grid-template-columns: 1fr .9fr; align-items: center; gap: 60px;
+}
+.eyebrow { color: var(--blue); font-size: 10px; font-weight: 800; letter-spacing: 1.55px; }
+.intro h1, .section-heading h2, .simple-section h2, .banner-placeholder h2 {
+    font-family: 'Manrope', sans-serif; letter-spacing: -1.6px;
+}
+.intro h1 { margin: 15px 0 14px; font-size: clamp(38px, 4.5vw, 58px); line-height: 1.08; }
+.intro h1 span { color: var(--blue); }
+.intro-copy > p { max-width: 480px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
+.intro-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 22px; margin-top: 27px; }
+.button {
+    min-height: 44px; padding: 0 20px; display: inline-flex;
+    align-items: center; justify-content: center; border-radius: 9px;
+    font-size: 12px; font-weight: 700; transition: transform .2s, background .2s;
+}
+.button:hover { transform: translateY(-2px); }
+.button-primary { color: #fff; background: var(--blue); box-shadow: 0 8px 18px rgba(36,87,232,.18); }
+.button-primary:hover { background: var(--blue-dark); }
+.button-outline { color: var(--blue); border: 1px solid #cbd8ff; background: #fff; }
+.text-link { color: var(--blue); font-size: 12px; font-weight: 700; }
+.text-link:hover { text-decoration: underline; }
+
+.intro-art {
+    min-height: 270px; position: relative; overflow: hidden;
+    display: grid; place-items: center; border-radius: 24px;
+    background: linear-gradient(135deg, #1746c8, #3976ff);
+}
+.art-card {
+    width: 63%; min-height: 190px; padding: 25px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    position: relative; z-index: 2; transform: rotate(-4deg);
+    color: var(--ink); background: #fff; border-radius: 14px;
+    box-shadow: 0 18px 35px rgba(5, 22, 80, .22);
+}
+.art-kicker { color: var(--blue); font-size: 10px; font-weight: 800; letter-spacing: 2px; }
+.art-card strong { font: 800 clamp(22px, 2.5vw, 32px)/1.1 'Manrope', sans-serif; letter-spacing: -1px; }
+.art-caption { color: #7b8497; font-size: 9px; font-weight: 800; letter-spacing: 1.3px; }
+.art-decoration { position: absolute; border: 1px solid rgba(255,255,255,.35); border-radius: 50%; }
+.decoration-one { width: 260px; height: 260px; right: -70px; top: -110px; }
+.decoration-two { width: 180px; height: 180px; left: -55px; bottom: -100px; }
+.art-orbit { position: absolute; width: 12px; height: 12px; border-radius: 50%; background: #ffd76a; }
+.orbit-one { top: 48px; left: 20%; }
+.orbit-two { bottom: 45px; right: 17%; width: 8px; height: 8px; background: #ff8dc7; }
+
+.plans-section { padding-block: 48px 65px; }
+.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 25px; }
+.section-heading h2, .simple-section h2 { margin: 8px 0 7px; font-size: clamp(25px, 3vw, 34px); }
+.section-heading p, .simple-section p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.desktop-link { margin-bottom: 8px; white-space: nowrap; }
+.plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
+.plan-card {
+    min-height: 300px; padding: 25px 24px 22px; position: relative;
+    border: 1px solid var(--line); border-radius: var(--radius);
+    background: #fff; box-shadow: 0 5px 18px rgba(20, 35, 70, .025);
+}
+.plan-featured { border: 1.5px solid #9bb5ff; box-shadow: var(--shadow); }
+.featured-label {
+    position: absolute; top: -11px; right: 20px; padding: 5px 10px;
+    border-radius: 20px; color: #fff; background: var(--blue);
+    font-size: 9px; font-weight: 800; letter-spacing: .6px;
+}
+.plan-period { color: var(--blue); font-size: 10px; font-weight: 800; letter-spacing: 1.2px; }
+.plan-card h3 { margin: 11px 0 5px; font: 700 18px 'Manrope', sans-serif; }
+.plan-description { margin: 0; color: var(--muted); font-size: 12px; }
+.price { margin-top: 22px; font: 800 30px 'Manrope', sans-serif; letter-spacing: -1px; }
+.price span { color: var(--blue); font-size: 15px; letter-spacing: 0; }
+.price small { font-size: 15px; }
+.total-price { margin: 1px 0 16px; color: var(--muted); font-size: 11px; }
+.plan-features { min-height: 48px; margin: 0 0 17px; padding: 12px 0 0; border-top: 1px solid var(--line); list-style: none; }
+.plan-features li { margin: 6px 0; color: #59647a; font-size: 11px; }
+.plan-features li::before { content: '✓'; margin-right: 8px; color: #239a70; font-weight: 800; }
+.plan-card .button { width: 100%; }
+.price-note { margin: 16px 0 0; color: #8992a3; font-size: 10px; }
+
+.banner-placeholder {
+    min-height: 190px; margin-bottom: 48px; padding: 35px 42px;
+    display: flex; align-items: center; justify-content: space-between; gap: 25px;
+    overflow: hidden; border-radius: 20px;
+    background: linear-gradient(110deg, #172f75, #2457e8 65%, #477cff);
+    color: #fff;
+}
+.banner-placeholder .eyebrow { color: #bcd0ff; }
+.banner-placeholder h2 { max-width: 590px; margin: 9px 0; font-size: clamp(22px, 3vw, 31px); line-height: 1.2; }
+.banner-placeholder p { max-width: 540px; margin: 0; color: #dbe5ff; font-size: 12px; line-height: 1.6; }
+.banner-tag { padding: 10px 13px; border: 1px dashed rgba(255,255,255,.55); border-radius: 8px; color: #e4ebff; font-size: 10px; font-weight: 700; white-space: nowrap; }
+
+.simple-section {
+    min-height: 155px; padding-block: 27px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid var(--line); scroll-margin-top: 100px;
+}
+.simple-section h2 { font-size: 25px; }
+.section-number { color: #dce4f4; font: 800 38px 'Manrope', sans-serif; }
+
+.site-footer { margin-top: 45px; padding: 30px max(24px, calc((100% - 1180px)/2)); background: #101b36; color: #fff; }
+.footer-top { display: flex; align-items: center; justify-content: space-between; padding-bottom: 24px; }
+.footer-brand .brand-symbol { color: var(--blue); background: #fff; }
+.footer-brand .brand-name span { color: #8eacff; }
+.footer-top p { color: #b9c4dc; font-size: 12px; }
+.footer-bottom { padding-top: 17px; border-top: 1px solid rgba(255,255,255,.13); display: flex; justify-content: space-between; gap: 20px; color: #aab5cc; font-size: 10px; }
+
+@media (max-width: 950px) {
+    .site-header { gap: 18px; }
+    .main-nav { gap: 13px; }
+    .nav-link { font-size: 11px; }
+    .brand-name { font-size: 16px; }
+}
+@media (max-width: 760px) {
+    .site-header { min-height: 70px; padding-inline: 20px; }
+    .main-nav { display: none; }
+    .mobile-menu { display: block; }
+    .student-login { margin-left: auto; }
+    .announcement { flex-wrap: wrap; gap: 7px 12px; text-align: center; }
+    .announcement p { font-size: 11px; }
+    .section-container { width: min(100% - 36px, 560px); }
+    .intro { padding-block: 42px; grid-template-columns: 1fr; gap: 28px; }
+    .intro-art { min-height: 230px; }
+    .art-card { min-height: 155px; }
+    .section-heading { align-items: start; }
+    .desktop-link { display: none; }
+    .plan-grid { grid-template-columns: 1fr; gap: 15px; }
+    .plan-card { min-height: 0; }
+    .plan-features { min-height: 0; }
+    .banner-placeholder { min-height: 190px; padding: 27px; align-items: flex-start; flex-direction: column; }
+    .simple-section { min-height: 140px; }
+    .footer-bottom { flex-direction: column; gap: 9px; }
+}
+@media (max-width: 420px) {
+    .brand-name { font-size: 14px; }
+    .student-login { font-size: 11px; }
+    .login-icon { width: 27px; height: 27px; }
+    .intro h1 { font-size: 38px; }
+    .intro-actions { align-items: flex-start; flex-direction: column; gap: 14px; }
+}

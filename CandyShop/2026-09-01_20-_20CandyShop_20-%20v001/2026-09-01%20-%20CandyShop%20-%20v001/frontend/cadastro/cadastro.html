@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Finalize seu cadastro na plataforma Aprova+.">
+    <title>Cadastro | Aprova+</title>
+
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <a class="marca" href="../interface/interface.html" aria-label="Aprova+ - página inicial">
+            <span class="marca-icone">A</span>
+            <span>APROVA+</span>
+        </a>
+
+        <a class="voltar" href="../interface/interface.html">Voltar ao site</a>
+    </header>
+
+    <main>
+        <section class="introducao">
+            <p class="sobretitulo">Sua jornada começa aqui</p>
+            <h1>Faça seu cadastro.</h1>
+            <p>Preencha as etapas para começar sua preparação com a Aprova+.</p>
+        </section>
+
+        <section class="cartao" aria-label="Processo de cadastro">
+            <nav class="etapas" aria-label="Etapas do cadastro">
+                <div class="etapa ativa" data-indicador="1">
+                    <span class="etapa-numero">1</span>
+                    <span>Aluno</span>
+                </div>
+
+                <div class="etapa" data-indicador="2">
+                    <span class="etapa-numero">2</span>
+                    <span>Pagamento</span>
+                </div>
+
+                <div class="etapa" data-indicador="3">
+                    <span class="etapa-numero">3</span>
+                    <span>Confirmação</span>
+                </div>
+            </nav>
+
+            <form id="formCadastro">
+
+                <!-- ETAPA 1: DADOS DO ALUNO -->
+                <section class="painel" data-painel="1">
+                    <h2>Seus dados</h2>
+                    <p class="descricao-painel">
+                        Vamos começar com algumas informações para criar sua conta.
+                    </p>
+
+                    <div class="grade-campos">
+                        <div class="campo largura-total">
+                            <label for="nome">Nome completo</label>
+                            <input type="text" id="nome" name="nome"
+                                placeholder="Digite seu nome completo"
+                                autocomplete="name" required>
+                        </div>
+
+                        <div class="campo largura-total">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email"
+                                placeholder="seuemail@exemplo.com"
+                                autocomplete="email" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="senha">Crie uma senha</label>
+                            <input type="password" id="senha" name="senha"
+                                placeholder="Mínimo de 8 caracteres"
+                                minlength="8" autocomplete="new-password" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="confirmarSenha">Confirme sua senha</label>
+                            <input type="password" id="confirmarSenha"
+                                name="confirmarSenha"
+                                placeholder="Digite a senha novamente"
+                                minlength="8" autocomplete="new-password" required>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ETAPA 2: ESCOLHA DO PLANO E PAGAMENTO -->
+                <section class="painel" data-painel="2" hidden>
+
+                    <h2>Escolha seu plano</h2>
+                    <p class="descricao-painel">
+                        Selecione o plano que deseja contratar.
+                    </p>
+
+                    <!-- OPÇÕES DE PLANOS -->
+                    <div class="opcoes-planos" id="opcoesPlanos">
+
+                        <label class="opcao-plano">
+                            <input type="radio" name="plano"
+                                value="trimestral" required>
+
+                            <span class="conteudo-plano">
+                                <strong>Trimestral</strong>
+                                <small>3 parcelas de R$ 80,00</small>
+                                <b>R$ 240,00</b>
+                            </span>
+                        </label>
+
+                        <label class="opcao-plano">
+                            <input type="radio" name="plano"
+                                value="semestral" required>
+
+                            <span class="conteudo-plano">
+                                <strong>Semestral</strong>
+                                <small>6 parcelas de R$ 100,00</small>
+                                <b>R$ 600,00</b>
+                            </span>
+                        </label>
+
+                        <label class="opcao-plano">
+                            <input type="radio" name="plano"
+                                value="anual" required>
+
+                            <span class="conteudo-plano">
+                                <strong>Anual</strong>
+                                <small>12 parcelas de R$ 120,00</small>
+                                <b>R$ 1.440,00</b>
+                            </span>
+                        </label>
+
+                    </div>
+
+                    <!-- SACOLINHA -->
+                    <aside class="sacola" aria-live="polite">
+
+                        <div class="sacola-topo">
+                            <strong>🛍 Sua sacolinha</strong>
+                            <span id="sacolaStatus">Nenhum plano escolhido</span>
+                        </div>
+
+                        <div class="sacola-detalhes">
+                            <span id="sacolaPlano">Escolha um plano acima</span>
+                            <strong id="sacolaPreco">R$ 0,00</strong>
+                        </div>
+
+                        <div class="sacola-total">
+                            <span>Total da compra</span>
+                            <strong id="sacolaTotal">R$ 0,00</strong>
+                        </div>
+
+                    </aside>
+
+                    <!-- FORMA DE PAGAMENTO -->
+                    <h2>Forma de pagamento</h2>
+                    <p class="descricao-painel">
+                        Escolha uma opção para a demonstração do processo de inscrição.
+                    </p>
+
+                    <p class="rotulo-grupo">
+                        Como deseja realizar o pagamento?
+                    </p>
+
+                    <div class="opcoes-pagamento">
+
+                        <label class="opcao-pagamento">
+                            <input type="radio" name="pagamento"
+                                value="Pix" required>
+
+                            <span>
+                                <strong>Pix</strong>
+                                <small>Opção de pagamento via Pix (simulação).</small>
+                            </span>
+                        </label>
+
+                        <label class="opcao-pagamento">
+                            <input type="radio" name="pagamento"
+                                value="Boleto" required>
+
+                            <span>
+                                <strong>Boleto</strong>
+                                <small>Opção de pagamento via boleto (simulação).</small>
+                            </span>
+                        </label>
+
+                    </div>
+
+                    <p class="aviso-prototipo">
+                        Esta é uma etapa demonstrativa do projeto.
+                        Nenhum pagamento real será solicitado ou processado nesta página.
+                    </p>
+
+                </section>
+
+                <!-- ETAPA 3: CONFIRMAÇÃO -->
+                <section class="painel" data-painel="3" hidden>
+
+                    <h2>Revise sua inscrição</h2>
+                    <p class="descricao-painel">
+                        Confira os dados antes de concluir a demonstração do cadastro.
+                    </p>
+
+                    <div class="resumo">
+
+                        <div class="resumo-linha">
+                            <span>Aluno</span>
+                            <strong id="resumoNome">—</strong>
+                        </div>
+
+                        <div class="resumo-linha">
+                            <span>E-mail</span>
+                            <strong id="resumoEmail">—</strong>
+                        </div>
+
+                        <div class="resumo-linha">
+                            <span>Plano escolhido</span>
+                            <strong id="resumoPlano">—</strong>
+                        </div>
+
+                        <div class="resumo-linha">
+                            <span>Valor ilustrativo</span>
+                            <strong class="preco" id="resumoPreco">—</strong>
+                        </div>
+
+                        <div class="resumo-linha">
+                            <span>Forma de pagamento</span>
+                            <strong id="resumoPagamento">—</strong>
+                        </div>
+
+                    </div>
+
+                    <p class="aviso-prototipo">
+                        Ao concluir, esta versão apenas exibirá uma confirmação na tela.
+                        O cadastro no banco de dados e a integração de pagamento
+                        serão implementados no backend.
+                    </p>
+
+                </section>
+
+                <!-- BOTÕES DE NAVEGAÇÃO -->
+                <div class="botoes">
+                    <button type="button" class="botao-voltar"
+                        id="voltar" hidden>
+                        Voltar
+                    </button>
+
+                    <button type="button" class="botao-avancar" id="avancar">
+                        Continuar
+                    </button>
+                </div>
+
+                <p class="mensagem" id="mensagem"
+                    role="alert" aria-live="polite"></p>
+
+            </form>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        © 2026 Aprova+ · Prepare-se para conquistar.
+    </footer>
+
+    <script src="cadastro.js" defer></script>
+</body>
+</html>
